@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Folio downloader</title>
+    <style>
+        #new_site_url, #preset_name {
+            width: 50em;
+        }
+    </style>
+</head>
+<body>
+<fieldset>
+    <legend>Developing</legend>
+    <label>
+        Site url: <input type="text" name="new_site_url" id="new_site_url" value="">
+    </label>
+    <p>
+        <textarea id="script_content" rows="30" cols="100"></textarea>
+    </p>
+
+    <p>
+        <label>
+            Preset name: <input type="text" name="preset_name" id="preset_name" value="">
+        </label>
+        <br>
+        Hostname: <span id="hostname"></span>
+        <input type="hidden" id="preset_id">
+    </p>
+
+    <button type="button" id="start_new_site">Test script</button> <button type="button" id="update_script_site">Update script on Site</button> <button type="button" id="save_script">Save script</button>
+</fieldset>
+
+<fieldset>
+    <legend>Downloading</legend>
+    <label>
+        Site url: <input type="text" name="site_url" id="site_url" value="">
+    </label>
+    
+    <p>
+        <select id="saved_scripts" multiple="multiple">
+        </select>
+    </p>
+    
+    <button type="button" id="start_saved_site">Download</button>
+</fieldset>
+
+<script>
+    // You can also require other files to run in this process
+    require('./renderer.js')
+</script>
+</body>
+</html>
